@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1005143790555",
+    "project_id": "new-eco-6cc84",
+    "storage_bucket": "new-eco-6cc84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005143790555:android:f7883ef8632090c6bc4dfe",
+        "android_client_info": {
+          "package_name": "com.example.neweco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1005143790555-epn88q0lk9maqq11nbqg9k2qnp2ch47e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKIjrep6gFP8Rj46XzJzyRPqT9BiZhGLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1005143790555-epn88q0lk9maqq11nbqg9k2qnp2ch47e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

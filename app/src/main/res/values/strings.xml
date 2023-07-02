@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">New Eco</string>
+    <string name="inside_logo">inside logo</string>
+    <string name="demo_text">This is demo text.</string>
+    <string name="demo_integer">₹ 500</string>
+    <string name="price">₹ %s</string>
+    <string name="valid_email">Please! Enter valid Email Address.</string>
+    <string name="valid_confPass">Password din not match!</string>
+    <string name="valid_pass">Password should be 8 char long and contains at least 1 special character and 1 number and mix of small and capital letters.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="this_is_demo_text_to_see_if_this_is_alright">This is demo text to see if this is alright.</string>
+    <string name="create_pass_string">Password must contains\n* at least one special character.\n* one number.\n* one small letter alphabet.\n* one capital letter alphabet.</string>
+    <string name="email_end_icon">email end icon.</string>
+    <string name="login">LOGIN</string>
+    <string name="register">REGISTER</string>
+    <string name="small_login">Login</string>
+    <string name="small_register">Register</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="not_register_yet">Not register yet?</string>
+    <string name="name">Name</string>
+</resources>
