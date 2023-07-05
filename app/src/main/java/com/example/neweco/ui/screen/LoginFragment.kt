@@ -62,7 +62,7 @@ class LoginFragment : Fragment() {
                     Utility.hideLoadingDialog()
                     if(status.result == true) {
                         Snackbar.make(binding.emailEditText, status.message, Snackbar.LENGTH_SHORT).show()
-                        Handler(Looper.getMainLooper()).postDelayed(runnable, 1000L)
+                        Handler(Looper.getMainLooper()).postDelayed(runnable, 300L)
                     } else {
                         Snackbar.make(binding.emailEditText, status.message, Snackbar.LENGTH_SHORT).show()
                     }
@@ -74,7 +74,20 @@ class LoginFragment : Fragment() {
     private fun loginUser() {
         val email = binding.emailField.text.toString().trim()
         val pass = binding.passwordField.text.toString().trim()
-        viewModel.loginUser(email,pass)
+        when{
+            email.isEmpty() -> {
+                Snackbar.make(binding.emailField, "Enter Email", Snackbar.LENGTH_SHORT).show()
+                binding.emailField.requestFocus()
+            }
+            pass.isEmpty() -> {
+                Snackbar.make(binding.passwordField, "Enter Password", Snackbar.LENGTH_SHORT).show()
+                binding.passwordField.requestFocus()
+            }
+            else -> {
+                viewModel.loginUser(email,pass)
+            }
+        }
+
     }
 
     private fun onClickPassEndIcon() {

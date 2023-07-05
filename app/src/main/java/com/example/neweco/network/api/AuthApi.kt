@@ -38,23 +38,31 @@ class AuthApi @Inject constructor() {
         val auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
         val response = Response(value = Unit)
-        if (user?.isEmailVerified!!) {
-            auth.signInWithEmailAndPassword(mail, pass)
-                .addOnSuccessListener {
-                    response.status = true
-                    response.message = it.user?.uid.toString()
-                    continuation.resume(response)
-                }
-                .addOnFailureListener {
-                    response.status = false
-                    response.message = it.message.toString()
-                    continuation.resume(response)
-                }
+        if(user != null) {
+            user.reload()
+            if (user.isEmailVerified) {
+                auth.signInWithEmailAndPassword(mail, pass)
+                    .addOnSuccessListener {
+                        response.status = true
+                        response.message = "Successfully! Login"
+                        continuation.resume(response)
+                    }
+                    .addOnFailureListener {
+                        response.status = false
+                        response.message = it.message.toString()
+                        continuation.resume(response)
+                    }
+            } else {
+                response.status = false
+                response.message = "Please verify your email"
+                continuation.resume(response)
+            }
         } else {
             response.status = false
-            response.message = "Please verify your email."
+            response.message = "User does not found."
             continuation.resume(response)
         }
+
     }
 
 }

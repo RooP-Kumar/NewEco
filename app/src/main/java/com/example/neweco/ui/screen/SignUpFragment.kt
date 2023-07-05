@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.PasswordTransformationMethod
 import android.text.method.SingleLineTransformationMethod
+import android.view.FocusFinder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,7 +60,29 @@ class SignUpFragment : Fragment() {
     private fun registerUser() {
         val email = binding.emailField.text.toString().trim()
         val pass = binding.passwordField.text.toString().trim()
-        viewModel.registerUser(email, pass)
+        val confPass = binding.confPasswordField.text.toString().trim()
+        val name = binding.nameField.text.toString().trim()
+        when{
+            email.isEmpty() -> {
+                Snackbar.make(binding.emailField, "Enter Email", Snackbar.LENGTH_SHORT).show()
+                binding.emailField.requestFocus()
+            }
+            name.isEmpty() -> {
+                Snackbar.make(binding.nameField, "Enter Name", Snackbar.LENGTH_SHORT).show()
+                binding.nameField.requestFocus()
+            }
+            pass.isEmpty() -> {
+                Snackbar.make(binding.passwordField, "Enter Password", Snackbar.LENGTH_SHORT).show()
+                binding.passwordField.requestFocus()
+            }
+            confPass.isEmpty() -> {
+                Snackbar.make(binding.confPasswordField, "Enter Confirm Password", Snackbar.LENGTH_SHORT).show()
+                binding.confPasswordField.requestFocus()
+            }
+            else -> {
+                viewModel.registerUser(email, pass)
+            }
+        }
     }
 
     private fun showLoading() {
@@ -87,7 +110,6 @@ class SignUpFragment : Fragment() {
     private fun onClickPassEndIcon(field : EditText, icon : ImageView, isVisible : Boolean, after : (Boolean) -> Unit) {
         val cursorPosition = field.selectionStart
         if(isVisible) {
-            field.setText(getString(R.string.demo_text))
             field.transformationMethod =
                 PasswordTransformationMethod.getInstance()
             icon.setImageDrawable(ResourcesCompat.getDrawable(resources, R.drawable.eye_slash, null))
@@ -168,8 +190,8 @@ class SignUpFragment : Fragment() {
             override fun onTextChanged(value: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 value?.let {
                     if(it.isNotEmpty()) {
-                        val pass = binding.passwordField.text
-                        if (pass == it) {
+                        val pass = binding.passwordField.text.toString()
+                        if (pass == it.toString()) {
                             binding.confPassMsg.visibility = View.INVISIBLE
                         } else {
                             binding.confPassMsg.visibility = View.VISIBLE

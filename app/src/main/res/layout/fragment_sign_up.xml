@@ -15,7 +15,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
                     app:lottie_autoPlay="true"
-                    app:lottie_fileName="login_and_sign.json" />
+                    app:lottie_fileName="anim.json" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
