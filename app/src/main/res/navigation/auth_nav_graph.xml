@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.neweco.ui.screen.LoginFragment"
+        android:name="com.example.neweco.ui.screen.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -15,15 +15,10 @@
             app:destination="@id/signUpFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_loginFragment_to_main_nav_graph"
-            app:destination="@id/main_nav_graph"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.neweco.ui.screen.SignUpFragment"
+        android:name="com.example.neweco.ui.screen.register.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -31,13 +26,7 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_signUpFragment_to_main_nav_graph"
-            app:destination="@id/main_nav_graph"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
     </fragment>
 
 
-    <include app:graph="@navigation/main_nav_graph" />
 </navigation>

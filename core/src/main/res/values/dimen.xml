@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="generalSpace">16dp</dimen>
+    <dimen name="generalHalfSpace">8dp</dimen>
+
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
+    <dimen name="very_small_text">13sp</dimen>
+    <dimen name="small_text">14sp</dimen>
+    <dimen name="normal_text">15sp</dimen>
+    <dimen name="large_text">16sp</dimen>
+    <dimen name="very_large_text">18sp</dimen>
+
+    <dimen name="corners">8dp</dimen>
+    <dimen name="editext_stroke_width">1dp</dimen>
+
+    <dimen name="horizontalRecyclerViewCardHeight">120dp</dimen>
+
+    <integer name="bold">700</integer>
+    <integer name="edittext_maxline">1</integer>
+
+    <dimen name="toolbarSize">?attr/actionBarSize</dimen>
+    <dimen name="bottomBarSize">?attr/actionBarSize</dimen>
+
+</resources>

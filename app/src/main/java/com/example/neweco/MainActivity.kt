@@ -1,6 +1,7 @@
 package com.example.neweco
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
@@ -9,14 +10,24 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.core.utils.AuthDataStoreImp
+import com.example.core.utils.Utility
+import com.example.core.viewmodels.ProductViewModel
 import com.example.neweco.databinding.ActivityMainBinding
-import com.example.neweco.ui.viewmodel.ProductViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val viewModel: ProductViewModel by viewModels()
     private lateinit var binding : ActivityMainBinding
+    @Inject
+    lateinit var authDataStore : AuthDataStoreImp
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -40,6 +51,23 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Un-Available!", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    override fun onStart() {
+        Utility.showLoadingDialog(this)
+        CoroutineScope(Dispatchers.Main).launch {
+            authDataStore.isAuth().collectLatest {
+                if(it) {
+                    delay(300)
+                    Utility.hideLoadingDialog()
+                    startActivity(Intent(this@MainActivity, BottomNavigationActivity::class.java))
+                    finish()
+                } else {
+                    Utility.hideLoadingDialog()
+                }
+            }
+        }
+        super.onStart()
     }
 
 }

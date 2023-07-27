@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/home"
+        android:id="@+id/home_nav_graph"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:title="@string/cart"
+        android:id="@+id/cart_nav_graph"
+        android:icon="@drawable/ic_cart"
+        />
+
+    <item
+        android:title="@string/setting"
+        android:id="@+id/setting_nav_graph"
+        android:icon="@drawable/ic_setting"
+        />
+
+</menu>

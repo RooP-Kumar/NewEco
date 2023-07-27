@@ -7,11 +7,25 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="Android Studio default JDK" />
+        <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/cart" />
+            <option value="$PROJECT_DIR$/feature/cart/data" />
+            <option value="$PROJECT_DIR$/feature/cart/domain" />
+            <option value="$PROJECT_DIR$/feature/cart/presentation" />
+            <option value="$PROJECT_DIR$/feature/home" />
+            <option value="$PROJECT_DIR$/feature/home/data" />
+            <option value="$PROJECT_DIR$/feature/home/domain" />
+            <option value="$PROJECT_DIR$/feature/home/presentation" />
+            <option value="$PROJECT_DIR$/feature/setting" />
+            <option value="$PROJECT_DIR$/feature/setting/data" />
+            <option value="$PROJECT_DIR$/feature/setting/domain" />
+            <option value="$PROJECT_DIR$/feature/setting/presentation" />
           </set>
         </option>
       </GradleProjectSettings>

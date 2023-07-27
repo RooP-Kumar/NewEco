@@ -3,10 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/homeFragment">
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.neweco.ui.screen.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/home_nav_graph">
+
+    <include app:graph="@navigation/home_nav_graph"/>
+    <include app:graph="@navigation/cart_nav_graph"/>
+    <include app:graph="@navigation/setting_nav_graph"/>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.neweco.MainActivity"
+        android:label="MainActivity">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="myapp://com.example/auth_activity" />
+    </activity>
+
 </navigation>

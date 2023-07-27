@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="btnText"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/commonBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/generalSpace"
+            android:text="@{btnText}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+    </RelativeLayout>
+
+</layout>

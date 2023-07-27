@@ -14,3 +14,13 @@ dependencyResolutionManagement {
 }
 rootProject.name = "New Eco"
 include ':app'
+include ':core'
+include ':feature:home:data'
+include ':feature:home:domain'
+include ':feature:home:presentation'
+include ':feature:cart:data'
+include ':feature:cart:domain'
+include ':feature:cart:presentation'
+include ':feature:setting:data'
+include ':feature:setting:presentation'
+include ':feature:setting:domain'

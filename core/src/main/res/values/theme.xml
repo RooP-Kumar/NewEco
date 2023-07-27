@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="startIconTint">@color/primary</item>
+        <item name="endIconTint">@color/primary</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corners</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corners</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corners</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corners</item>
+        <item name="boxStrokeColor">@color/mtrl_textfield_stroke</item>
+        <item name="boxStrokeWidth">@dimen/editext_stroke_width</item>
+        <item name="boxStrokeWidthFocused">@dimen/editext_stroke_width</item>
+        <item name="maxLines">@integer/edittext_maxline</item>
+    </style>
+</resources>

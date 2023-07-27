@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="generalSpace">16dp</dimen>
-    <dimen name="generalHalfSpace">8dp</dimen>
 
-    <dimen name="space_12">12dp</dimen>
-    <dimen name="space_6">6dp</dimen>
-
-    <dimen name="horizontalRecyclerViewCardHeight">120dp</dimen>
-
-    <integer name="bold">700</integer>
 
 
 </resources>

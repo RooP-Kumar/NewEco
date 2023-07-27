@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.core.network.data.DataBinding_textField" />
+
+    </data>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editeTextlayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@{data.hint}"
+            app:endIconMode="@{data.endIconMode}"
+            app:startIconDrawable="@{data.startIcon}"
+            app:setEndIconDrawable="@{data.endIcon}"
+            style="@style/TextInputLayoutStyle"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="@{data.inputType}"
+                android:imeOptions="@{data.imeOption}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+</layout>
